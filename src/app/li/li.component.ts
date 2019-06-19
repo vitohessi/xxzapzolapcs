@@ -19,6 +19,12 @@ export class LiComponent implements OnInit {
 
   get f(){ return this.loginForm.controls; }
 
+  deleteTrack(id: string){
+    this.db.deleteSuivi(id)
+    .then(res => {})
+    .catch(err => {});
+  }
+
   ngOnInit() {
   	this.db.getSuivi()
   	.subscribe(res => {

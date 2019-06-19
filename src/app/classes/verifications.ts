@@ -21,6 +21,7 @@ export class Verifications {
 	montant8: string;
 	montant9: string;
 	montant10: string;
+	datesave: string;
 	id: string;
 
 	constructor(id: string, datas: any){
@@ -35,6 +36,9 @@ export class Verifications {
 					this['montant'+i] = datas['montant'+i];
 				}
 			}
+
+			this.datesave = datas.datesave;
+			this.id = id;
 			
 		}
 	}

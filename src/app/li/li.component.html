@@ -23,9 +23,15 @@
 			</form>
 		</div>
 		<div class="suivis-list row" *ngIf="accesGranted">
-			<div class="col-md-6 bg-white p-3" *ngFor="let suivi of suivisDatas">   
-				<h5 class="text-primary mb-2 text-uppercase">{{suivi.nom}}</h5>
+			<div class="col-md-6 bg-white p-3 position-relative" *ngFor="let suivi of suivisDatas"> 
+			    <div class="text-right position-absolute" style="right:15px; font-size: 20px">
+			    	<a href="javascript:void(0);" class="badge badge-secondary" (click)="deleteTrack(suivi.id)">
+			    		<i class="fas fa-trash-alt"></i>
+			    	</a> 
+			    </div>  
+				<h5 class="text-primary-me mb-2 text-uppercase">{{suivi.nom}}</h5>
 				<h5 class="text-secondary mb-2 text-lowercase">{{suivi.email}}</h5>
+				<h6 class="text-secondary mb-2 text-lowercase">{{suivi.datesave}}</h6>
 				<div class="rounded my-2 bg-light p-3">
 					<div *ngIf="suivi.code1" class="row border-bottom pb-2 m-2 font-weight-bold text-dark">
 						<div class="col-6 text-success">{{suivi.code1}}</div><div class="col-3" *ngIf="suivi.montant1" >{{suivi.montant1}} €</div>
